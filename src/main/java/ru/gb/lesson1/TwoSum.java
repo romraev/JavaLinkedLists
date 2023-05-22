@@ -1,4 +1,4 @@
-package ru.gb;
+package ru.gb.lesson1;
 
 import java.util.Arrays;
 import java.util.HashMap;
