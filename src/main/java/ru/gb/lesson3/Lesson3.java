@@ -5,32 +5,26 @@ import java.util.LinkedList;
 public class Lesson3 {
 
     public static void main(String[] args) {
-        LinkedList<Integer> javaLinkedList = new LinkedList();
-        javaLinkedList.add(1);
-        javaLinkedList.add(2);
-        javaLinkedList.add(3);
+//        LinkedList<Integer> javaLinkedList = new LinkedList();
+//        javaLinkedList.add(1);
+//        javaLinkedList.add(2);
+//        javaLinkedList.add(3);
 
         MyLinkedList myLinkedList = new MyLinkedList();
         myLinkedList.add(1);
         myLinkedList.add(2);
         myLinkedList.add(3);
 
-        System.out.println(myLinkedList);
-//        System.out.println(myLinkedList.get(-1)); // IndexOutOfRange
-        System.out.println(myLinkedList.getFirst());
-        System.out.println(myLinkedList.get(0));
-        System.out.println(myLinkedList.get(1));
-        System.out.println(myLinkedList.get(2));
+//        System.out.println(myLinkedList.getSize());
 
-//        System.out.println(myLinkedList.pop(0));
-//        System.out.println(myLinkedList);
-//        System.out.println(myLinkedList.get(3)); // IndexOutOfRange
+//        System.out.println(myLinkedList.popLast());
 
-        // 1 -> 2 -> 3
-        System.out.println(myLinkedList); // [1 -> 2 -> 3]
-        MyLinkedList reversed = myLinkedList.reversed();
-        System.out.println(reversed); // [3 -> 2 -> 1]
-        System.out.println(myLinkedList); // [1 -> 2 -> 3]
+//        System.out.println(myLinkedList.contains(1));
+
+//        System.out.println(myLinkedList); // [1 -> 2 -> 3]
+//        MyLinkedList reversed = myLinkedList.reversed();
+//        System.out.println(reversed); // [3 -> 2 -> 1]
+//        System.out.println(myLinkedList); // [1 -> 2 -> 3]
 
     }
 

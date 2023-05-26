@@ -7,11 +7,11 @@ public class MyLinkedList {
 
     /**
      * Реализоват в классе MyLinkedList следующие методы
-     * 1. public int size() - получение размера списка, проитерировався по всей структуре
+     * 1. public int size() - получение размера списка, проитерировався по всей структуре / OK
      * 1.1 * Можно завести переменную size, поддерживать ее и использовать ее.
-     * 2. public boolean contains(int value) - проверка наличия элемента по значению
-     * 3. public int popLast() - удаление последнего элемента. Если список пустой - то ошибка
-     * 4. * Переделать все int значения на дженерик T, чтобы можно было хранить значения любых типов
+     * 2. public boolean contains(int value) - проверка наличия элемента по значению /OK
+     * 3. public int popLast() - удаление последнего элемента. Если список пустой - то ошибка /OK
+     * 4. * Переделать все int значения на дженерик T, чтобы можно было хранить значения любых типов / =(
      * 5. * public MyLinkedList reversed() - создать НОВЫЙ список, порядок в котором обратный текущему
      */
 
@@ -36,6 +36,20 @@ public class MyLinkedList {
         } else {
             last.next = new Node(value);
         }
+    }
+
+    public int getSize() {
+        if (head == null) {
+            throw new IllegalStateException("Список пустой");
+        }
+
+        Node cursor = head;
+        int size = 0;
+        while (cursor != null) {
+            cursor = cursor.next;
+            size++;
+        }
+        return size;
     }
 
     public int getFirst() {
@@ -63,8 +77,28 @@ public class MyLinkedList {
         throw new IndexOutOfBoundsException(index);
     }
 
+    public boolean contains(int value) {
+        if (head == null) {
+            throw new IllegalStateException("Список пустой");
+        }
+
+        Node cursor = head;
+        while (cursor != null) {
+            if (cursor.value == value) {
+                return true;
+            }
+            cursor = cursor.next;
+        }
+        return false;
+    }
+
     public int popFirst() {
         return pop(0);
+    }
+
+    public int popLast() {
+        int lastIndex = getSize() - 1;
+        return pop(lastIndex);
     }
 
     public int pop(int index) {
@@ -97,8 +131,17 @@ public class MyLinkedList {
     }
 
     public MyLinkedList reversed() {
-        // TODO: 25.05.2023 Реализовать пункт 5
-        throw new UnsupportedOperationException();
+        if (head == null) {
+            throw new UnsupportedOperationException("Cписок пустой");
+        }
+
+        int newIndex = getSize() - 1;
+        MyLinkedList reversed = new MyLinkedList();
+        while (newIndex >= 0){
+            reversed.add(get(newIndex));
+            newIndex--;
+        }
+        return reversed;
     }
 
     private Node findLast() {
